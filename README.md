@@ -17,6 +17,17 @@ that includes it:
 In addition, `TransactionAwareCollection` makes MongoDB driver aggregations participate in the active
 transaction, so they see the changes pending commit.
 
+A unique index violation (error code 11000) raises `Mongo::Error::DuplicateKey` instead of a generic
+`Mongo::Error::OperationFailure`, so callers can rescue a duplicate directly:
+
+```ruby
+begin
+  inventariable.save!
+rescue Mongo::Error::DuplicateKey
+  # ...
+end
+```
+
 ## Tests
 
 The suite expects a MongoDB replica set running on the default port:
