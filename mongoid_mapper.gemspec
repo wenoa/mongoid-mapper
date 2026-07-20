@@ -1,8 +1,6 @@
-require_relative "lib/mongoid_mapper/version"
-
 Gem::Specification.new { |spec|
   spec.name = "mongoid_mapper"
-  spec.version = MongoidMapper::VERSION
+  spec.version = "0.0.0"
   spec.authors = ["Wenoa Studio"]
   spec.email = ["desarrollo@wenoa.studio"]
 
