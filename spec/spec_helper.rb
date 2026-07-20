@@ -1,3 +1,5 @@
+ENV["TZ"] = "UTC" # Pin the zone so the suite is deterministic; keep at first line
+
 require "simplecov"
 require "simplecov-console"
 
